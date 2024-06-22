@@ -1,0 +1,611 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+li{ list-style: none; }
+a{ text-decoration: none; }
+img{ display: block; }
+body{ 
+    /* background-color: #006cff; */
+    background-color: #1239b5;;
+}
+h2{ color: rgb(6, 29, 5); }
+.tit{ 
+    width: 380px;
+    background-color: #436efc;
+    height: 40px;
+    padding: 0px 0 0px 5px;
+    display: block;
+}
+.tit>h2{
+    font-size: 50px;
+    font-weight: 700;
+    color: #e3e3e3;
+    transform: translateY(-25px);
+    font-family: "computersetak", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+.box{
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/*slick*/
+.slick-prev, .slick-next{
+    z-index: 990;
+}
+
+.slick-prev:before, .slick-next:before{
+    font-size: 30px !important;
+    color: #000 !important;
+    font-weight: 900 !important;
+}
+
+/* css 
+.fade-class {
+    position: relative;
+    left: 200px;
+    opacity: 0;
+    transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s linear;
+  }
+  .fade-in {
+    transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s linear;
+    left: 0px;
+    opacity: 1;
+  }*/
+
+/*loading_page*/
+#loading_page{
+    width: 100%;
+    height: 100vh;
+    background-color: #005aff;
+    position: relative;
+    z-index: 999;
+    overflow-x: hidden;
+}
+
+ .loading_img01{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading_img01>img{
+    width: 80%;
+}
+
+.loading_img02{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading_img02>img{
+    width: 30%;
+}
+
+#wrap{
+    width: 100%;
+    position: relative;
+}
+
+/*사이드 메뉴*/
+.side-wrap{
+    position: fixed;
+    left: 0;
+    top: 0;
+    /* background-color: rgb(131, 196, 128); */
+    /* background-color: rgb(0 108 255); */
+    background-color: #1239b5;;
+    width: 25%;
+    height: 100vh;
+    box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
+}
+
+.profile-box{
+    width: 100%;
+    /* height: 35%; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.profile-image{
+    width: 300px;
+    height: 380px;
+    margin: 50px auto;
+    overflow: hidden;
+    /* padding-top: 50px; */
+    border-radius: 30px;
+    position: relative;
+}
+
+.profile-image>img{
+    width: 100%;
+    margin: auto;
+    margin-bottom: 50px;
+    position: absolute;
+    top: -20px;
+}
+
+.profile-image>span{
+    width: 250px;
+    height: 250px;
+    background-color: #fff;
+    border-radius: 250px;
+    display: block;
+    margin: auto;
+    padding: 15px;
+    /* overflow: hidden; */
+    position: relative;
+}
+
+.profile-image>span>img{
+    position: absolute;
+    top: -101%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+}
+
+.profile-menu{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.profile-menu li{
+    text-align: center;
+    background-color: rgb(255, 157, 0);
+    width: 75px;
+    height: 75px;
+    line-height: 80px;
+    position: relative;
+    border-radius: 100%;
+}
+
+.profile-menu a{
+    display: block;
+    color: #fff;
+}
+
+.profile-menu span{
+    width: 300px;
+    height: auto;
+    overflow: hidden;
+    background-color: rgb(255, 157, 0);
+    display: block;
+    position: absolute;
+    right: -345px;
+    top: 0;
+    line-height: 25px;
+    padding: 15px;
+    border-radius: 15px;
+    display: none;
+    text-align: left;
+}
+
+.contact{
+    width: 100%;
+    height: auto;
+    /* margin-top: 60px; */
+}
+
+.contact ul{
+    padding: 0 40px;
+}
+
+.contact ul li{
+    color: #e3e3e3;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 40px;
+    font-family: "neutronic-hangeul", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+/***************************/
+
+
+/*포트폴리오 페이지*/
+#main{
+    width: 75%;
+    float: right;
+}
+
+#main .main_wrap{
+    width: 90%;
+    margin: auto;
+}
+
+/*intro*/
+.intro{
+    width: 100%;
+    height: 100vh;
+    /* background-color: #9a9156; */
+    display: grid;
+    gap: 15px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 210px 180px 180px 320px;
+    grid-template-areas: 
+        'about_me career'
+        'about_me education'
+        'about_me license'
+        'skill skill'
+    ;
+    position: relative;
+}
+
+.intro h2{
+    /* color: #cbc6a0; */
+    /* color: #006cff; */
+    color: #1239b5;
+}
+
+.intro li{
+    /* color: rgb(6, 29, 5); */
+    color: #e3e3e3;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.about_me{ 
+    grid-area: about_me; 
+    margin-top: 50px;
+}
+
+.about_me>img{
+    width: 60%;
+}
+
+.about_me>h2{
+    font-size: 40px;
+    width: 260px;
+    color: #e3e3e3;
+    font-family: "computersetak", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.e_mark{
+    display: block;
+    float: right;
+    animation: icon 2s infinite ease;
+    /* animation-name: icon;
+    animation-duration:2s;
+    animation-duration: leaner;
+    animation-iteration-count:3;
+    animation-direction:alternate;
+    animation-fill-mode: forwards; */
+    /* transform: rotate(15deg); */
+    text-shadow: 0px 0px 30px #fff;
+}
+
+@keyframes icon {
+    0%{ transform: rotate(-15deg) }
+    50%{transform: rotate(15deg); }
+    100%{transform: rotate(-15deg); }
+}
+
+.about_me p{
+    color: #e3e3e3;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 35px;
+    margin-top: 15px;
+    font-family: "computersetak", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.point01{
+    font-size: 24px;
+    color: #e3e3e3;
+    float: left;
+}
+
+.point02{
+    font-size: 26px;
+    color: #e3e3e3;
+    font-weight: 500;
+    /* text-shadow: 0px 0px 6px #1239b5; */
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tit02{
+    width: 260px;
+    height: 25px;
+    background-color: #436efc;
+    display: block;
+    text-align: center;
+    float: left;
+    position: relative;
+    margin-top: 8px;
+}
+
+.career{ 
+    grid-area: career; 
+    margin-top: 50px;
+    font-family: "neutronic-hangeul", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.career ul{
+    margin-top: 10px;
+}
+.education{ 
+    grid-area: education; 
+    font-family: "neutronic-hangeul", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.education ul{
+    margin-top: 10px;
+}
+
+.license{ 
+    grid-area: license; 
+    font-family: "neutronic-hangeul", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.license ul{
+    margin-top: 10px;
+}
+
+.skill{ 
+    grid-area: skill; 
+    width: 97.5%;
+    font-family: "neutronic-hangeul", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.skill_box{
+    width: 100%;
+    height: 50px;
+    background-color: #1239b5;
+    box-shadow: inset 0px 0px 6px #041d6e;
+    margin-top: 30px;
+    position: relative;
+}
+
+.skill_bar{
+    width: 0%;
+    height: 50px;
+    background-color: #e3e3e3;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.skill ul{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.skill ul li{
+    width: 80px;
+    /* background-color: #ccc; */
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.skill ul li>h3{
+    font-size: 18px;
+    text-align: center;
+    padding-bottom: 10px;
+    color: #e3e3e3;
+}
+
+.skill ul li>img{
+    width: 100%;
+}
+
+.skill ul li>img:hover{
+    transform: translateY(-8px);
+    transition: .3s;
+}
+
+
+/*main_project*/
+.web_project{
+    width: 100%;
+    margin-top: 100px;
+}
+
+.web_contents{
+    width: 100%;
+    margin-top: 50px;
+}
+
+.web_contents>h2{
+    font-size: 30px;
+    color: #e3e3e3;
+    font-weight: 700;
+    font-family: "computersetak", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.web_con{
+    width: 100%;
+    /* overflow: hidden; */
+}
+
+.web_con>ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.web_con>ul li{
+    width: 40%;
+    height: auto;
+    margin: 15px 15px;
+}
+
+.web_slideBox{
+    width: 100%;
+    height: 300px;
+    box-shadow: 3px 3px 10px #041d6e;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 15px;
+    position: relative;
+}
+
+.web_slideBox img{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 898;
+}
+
+.web_slideBox span{
+    width: 100%;
+    height: 300px;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 899;
+    transition: 3s;
+}
+
+.web_slideBox:hover span{
+    display: block;
+    transition: 3s;
+}
+
+.web_slideBox p{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    padding: 15px 30px 0px 30px;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+    font-family: "neutronic-hangeul", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.web_slideBox p:first-child{
+    margin-top: 30px;
+}
+
+.web_slideBox p>b{
+    color: #436efc;
+    font-weight: 900;
+}
+
+.web_btn{
+    width: 100%;
+    height: 40px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-top: 15px;
+    color: #1239b5;
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    font-family: "neutronic-hangeul", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.view_btn{
+    width: 49%;
+    float: left;
+    font-family: "neutronic-hangeul", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.process_btn{
+    width: 49%;
+    float: right;
+    font-family: "neutronic-hangeul", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.contents_banner{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.banner .contents_banner>li{
+    width: 30%;
+    height: 340px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.contents_banner>li>a>img{
+    width: 100%;
+}
+
+.banner02 .contents_banner>li{
+    width: 30%;
+    /* height: 390px; */
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+
+
+/*footer*/
+footer{
+    margin-top: 100px;
+    color: rgb(255, 255, 255); 
+    font-size: 13px;
+    line-height: 20px;
+    height: 50px;
+    text-align: left;
+    padding: 30px 0;
+}
+
+
+
+
+
